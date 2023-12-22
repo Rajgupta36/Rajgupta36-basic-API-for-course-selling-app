@@ -1,12 +1,20 @@
-## Create a course selling website
+---------------------------------------------------------------------------------------functionalities:------------------------------------------------------------------------------------------
+Admin users can now create courses and manage signups
+Both admins and users can register and log in.
+Upon successful login, users receive a unique JWT token that acts as their passport to the platform.
 
-### Description
+Course Management and Access Control:
+Built functionality for admins to create and manage courses, including details like title, description, and price.
+Users can sign up for courses and view a list of all available courses.
+After purchasing a course, users can access exclusive content and track their progress.
 
-We have introduced the signgin endpoints for both users and admins.
-For this one, in every authenticated requests, you need to send the jwt in headers (Authorization : "Bearer <actual token>").
-You need to use mongodb to store all the data persistently.
+JWT-powered Security:
+Every interaction with the backend requires the user's JWT token for verification. This ensures only authorized users can access purchased courses and perform actions like updating their profiles.
 
-## Routes
+Next Steps:
+Now that the core backend is up and running, I'm excited to move on to building the frontend interface. This will involve creating user dashboards, course pages, and a payment gateway integration.
+I'm also looking forward to implementing additional features like user reviews, progress tracking, and personalized recommendations.
+--------------------------------------------------------------------------------------------## Routes------------------------------------------------------------------------------------------------------------
 
 ### Admin Routes:
 
@@ -14,7 +22,7 @@ You need to use mongodb to store all the data persistently.
   Description: Creates a new admin account.
   Input Body: { username: 'admin', password: 'pass' }
   Output: { message: 'Admin created successfully' }
-- POST /admin/signin
+- POST /admin/signinImplemented a secure authentication system similar to ChatGPT, using JSON Web Tokens (JWTs) for user authorization.
   Description: Creates a new admin account.
   Input Body: { username: 'admin', password: 'pass' }
   Output: { token: 'your-token' }
